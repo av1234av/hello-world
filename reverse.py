@@ -6,6 +6,7 @@ def reverse_number(n):
         n = n / 10
     return num
 
+
 def reverse_string(s):
     return s[::-1]
 
