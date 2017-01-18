@@ -7,7 +7,7 @@ def reverse_number(n):
     return num
 
 def reverse_string(s):
-    return ''.join(list(s)[::-1])
+    return s[::-1]
 
 if __name__ == '__main__':
     print reverse_number(1234567)
