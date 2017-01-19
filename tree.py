@@ -55,7 +55,7 @@ class Tree(object):
     def _print_tree(self, node):
         if node:
             self._print_tree(node.left)
-            print node.val+' '
+            print str(node.val)+' '
             self._print_tree(node.right)
 
 if __name__ == '__main__':
