@@ -1,4 +1,5 @@
 def two_sum(ll, summ):
+    ll.sort()
     i = 0
     j = len(ll) - 1
     kount = 0
@@ -21,7 +22,7 @@ def two_sum(ll, summ):
 
             for c in range(idxI, i):
                 for b in range(idxJ, j, -1):
-                    print c, b
+                    print '{0} + {1}'.format(ll[c],ll[b])
                     kount += 1
     print kount
 
