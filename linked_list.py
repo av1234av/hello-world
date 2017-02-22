@@ -24,6 +24,17 @@ class LinkedList(object):
             print p.val
             p = p.next
 
+    def reverse(self):
+        prev = None
+        next_node = None
+        cur=self.head
+        while cur.next:
+            next_node = cur.next
+            cur.next = prev
+            prev = cur
+            cur = next_node
+        self.head = prev
+
     def find_mid_point(self):
         p1=self.head
         p2=self.head
@@ -59,4 +70,6 @@ if __name__ == '__main__':
 
     ll.traverse()
     ll.find_mid_point()
-    ll.interweave()
+    ll.reverse()
+    ll.traverse()
+    # ll.interweave()

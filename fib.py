@@ -23,6 +23,12 @@ def fib3(x):
         else:
             break
 
+def fibonacci(n, first=0, second=1):
+    while n != 0:
+        yield first
+        n,first,second = n-1, second, first+second
+
 if __name__ == '__main__':
     # print fib(10)
     fib3(10)
+    print list(fibonacci(10))
