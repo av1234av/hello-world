@@ -1,3 +1,6 @@
+from collections import defaultdict
+import json
+
 class Node(object):
     def __init__(self,val):
         self.right = None
@@ -58,6 +61,13 @@ class Tree(object):
             print str(node.val)+' '
             self._print_tree(node.right)
 
+def tree():
+    """
+    Alternate way to implement a tree using defaultdict
+    :return:
+    """
+    return defaultdict(tree)
+
 if __name__ == '__main__':
     t=Tree()
     t.add(5)
@@ -65,3 +75,12 @@ if __name__ == '__main__':
     t.add(3)
     t.add(7)
     t.print_tree()
+
+    file_system = tree()
+    file_system['Dir1']['File1']='file1.txt'
+    file_system['Dir1']['Dir1_1']['File1']='file1_1_1.txt'
+    file_system['Dir1']['Dir1_1']['File2']='file1_1_2.txt'
+    file_system['Dir2']['Dir2_1']['File1']='file2_1_1.txt'
+    file_system['Dir2']['File2']='file2.txt'
+
+    print json.dumps(file_system)
