@@ -9,7 +9,7 @@ def mergesort(ll):
         return ll
 
 def _merge(ll,left,right):
-    i,j,k=0,0,0
+    i=j=k=0
 
     while i < len(left) and j < len(right):
         if left[i] < right[j]:
@@ -35,8 +35,4 @@ def _merge(ll,left,right):
 
 if __name__ == '__main__':
 
-    a=[6,8,9]
-    b=[7,10,14,17]
-    ll=_merge(a+b,a,b)
-    print ll
     print(mergesort([4,7,1,8,33,25,91,95,54]))
