@@ -20,15 +20,17 @@ class LinkedList(object):
 
     def traverse(self):
         p = self.head
+        pp=[]
         while p:
-            print p.val
+            pp.append(p.val)
             p = p.next
+        print pp
 
     def reverse(self):
         prev = None
         next_node = None
         cur=self.head
-        while cur.next:
+        while cur:
             next_node = cur.next
             cur.next = prev
             prev = cur
@@ -38,7 +40,7 @@ class LinkedList(object):
     def find_mid_point(self):
         p1=self.head
         p2=self.head
-        while p2.next:
+        while p2 and p2.next:
             p1=p1.next
             p2=p2.next.next
         print 'midpoint {}'.format(p1.val)
@@ -55,21 +57,16 @@ class LinkedList(object):
 
         self.traverse()
 if __name__ == '__main__':
-    n1 = Node(10)
-    n2 = Node(3)
-    n3 = Node(45)
-    n4 = Node(2)
-    n5 = Node(67)
 
     ll = LinkedList()
-    ll.add(n1)
-    ll.add(n2)
-    ll.add(n3)
-    ll.add(n4)
-    ll.add(n5)
+    for i in [10,3,45,2,67,89,3,77,65,34]:
+        ll.add(Node(i))
 
+    print "traversing a list"
     ll.traverse()
     ll.find_mid_point()
+
+    print "reversing a list"
     ll.reverse()
     ll.traverse()
     # ll.interweave()
