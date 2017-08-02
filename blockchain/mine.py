@@ -1,13 +1,15 @@
 import blockchain.blockchain
 import block
+from transaction import node
 import datetime
+
 from transaction import this_node_transactions
 import json
 
 my_address='xxxx-yyyyy-random-miners-address-99999'
 
+
 def proof_of_work(last_proof):
-    last_block = blockchain[len(blockchain) - 1]
     incrementor=last_proof + 1
 
     while incrementor % 7 == 0 and last_proof % 7 == 0:
@@ -15,7 +17,7 @@ def proof_of_work(last_proof):
 
     return incrementor
 
-
+@node.route('/mine', methods=['GET'])
 def mine():
     last_block = blockchain[len(blockchain) - 1]
     last_proof = last_block.data['proof-of-work']
