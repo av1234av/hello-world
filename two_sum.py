@@ -22,9 +22,9 @@ def two_sum(ll, summ):
 
             for c in range(idxI, i):
                 for b in range(idxJ, j, -1):
-                    print '{0} + {1}'.format(ll[c],ll[b])
+                    print('{0} + {1}'.format(ll[c],ll[b]))
                     kount += 1
-    print kount
+    print(kount)
 
 if __name__ == '__main__':
     two_sum([5,2,6,8,15,3,1,7,5],13)

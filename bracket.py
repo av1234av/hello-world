@@ -23,7 +23,7 @@ def matches(open, close):
     return open_list.index(open) == close_list.index(close)
 
 if __name__ == '__main__':
-    if balanced_brackets('({[[()]]})[]{'):
+    if balanced_brackets('({[[()]]})'):
         print 'Brackets are balanced'
     else:
         print 'Unbalanced bracktes'

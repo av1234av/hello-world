@@ -15,7 +15,7 @@ class LinkedList(object):
 
         p = self.head
         while p.next:
-            p=p.next
+            p = p.next
         p.next = n
 
     def traverse(self):
@@ -28,7 +28,6 @@ class LinkedList(object):
 
     def reverse(self):
         prev = None
-        next_node = None
         cur=self.head
         while cur:
             next_node = cur.next

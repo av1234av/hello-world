@@ -18,24 +18,25 @@ def load_csv():
             del row['File']
             stock_list.append(row)
 
-        print stock_list
+        print (stock_list)
         lowest_price = min(stock_list, key=lambda x: float(x['Price']))
         highest_price = max(stock_list, key=lambda x: float(x['Price']))
-        print lowest_price
-        print highest_price
+        print (lowest_price)
+        print (highest_price)
 
 def load_namedtuples():
+    ll=[]
     Quote = namedtuple('Quote',['Time','Stock','Price'])
 
     with open("C:\\Temp\\prices.txt", 'r') as f:
         for row in f:
             ll.append(Quote(*(row.strip().split()[1:])))
 
-    print 'total quotes: {}'.format(len(ll))
-    print 'last entry {}'.format(ll[-1])
+    print ('total quotes: {}'.format(len(ll)))
+    print ('last entry {}'.format(ll[-1]))
 
     t1=time.time()
-    print 'total count after removing duplicates {0} took {1}'.format(len(remove_dups(ll)),time.time()-t1)
+    print ('total count after removing duplicates {0} took {1}'.format(len(remove_dups(ll)),time.time()-t1))
 
 
 if __name__ == '__main__':

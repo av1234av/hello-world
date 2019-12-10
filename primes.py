@@ -1,6 +1,5 @@
 import math
 
-
 def is_prime(n):
     if n % 2 == 0:
         return False
@@ -10,7 +9,6 @@ def is_prime(n):
         if n % p == 0:
             return False
     return True
-
 
 def primes(n):
     array=[0,1,2]

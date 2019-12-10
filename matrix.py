@@ -2,7 +2,7 @@ import numpy
 
 def transpose(m):
     t=[[0 for i in range(len(m))] for j in range(len(m[0]))]
-    print t
+    print(t)
 
     for i in range(len(m)):
         for j in range(len(m[0])):
@@ -27,7 +27,6 @@ def matrixmult2(m,n):
     result = [[sum(a * b for a,b in zip(row_m, col_n)) for col_n in n_zip] for row_m in m]
     print result
 
-
 def matrixmult(m,n):
     rows_m = len(m)
     cols_m=len(m[0])
@@ -36,8 +35,8 @@ def matrixmult(m,n):
 
     result=[[0 for i in range(cols_n)] for j in range(rows_m)]
 
-    for i in range(cols_n):
-        for j in range(rows_m):
+    for i in range(rows_m):
+        for j in range(cols_n):
             for k in range(rows_n):
                 result[i][j] += m[i][k]*n[k][j]
     return result
@@ -50,7 +49,7 @@ if __name__ == '__main__':
                 [1,2],
                 [1,2]]
 
-    print transpose(matrix_a)
+    print 'transpose {}'.format(transpose(matrix_a))
     print 'result from matmul {}'.format(matrixmult(matrix_a, matrix_b))
-    print matrixmult1(matrix_a, matrix_b)
+    print 'result from matrixmult1 {}'.format(matrixmult1(matrix_a, matrix_b))
     print matrixmult2(matrix_a, matrix_b)
