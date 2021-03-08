@@ -14,7 +14,7 @@ def is_prime(n):
     return True
 
 
-def f(n):
+def sum_squared(n):
     sum = 0
     for i in range(1000):
         sum += n * n
@@ -23,12 +23,13 @@ def f(n):
 
 def multiprocess_with_futures():
     with futures.ProcessPoolExecutor(2) as executor:
-        e=executor.map(f,range(100))
+        e=executor.map(sum_squared,range(100))
     for x in e:
-        print x
+        print(x)
+
 def multiprocess_using_Pool():
     p = Pool()
-    p.map(f,range(10000))
+    p.map(sum_squared,range(10000))
     p.close()
     p.join()
 
@@ -57,13 +58,13 @@ if __name__ == '__main__':
     from time import time
     t1=time()
     multiprocess_using_Pool()
-    print 'processing times {}'.format(time()-t1)
+    print('processing times {}'.format(time()-t1))
 
     t2=time()
     for x  in range(10000):
-        f(x)
+        sum_squared(x)
 
-    print 'single proc times {}'.format(time()-t2)
+    print('single proc times {}'.format(time()-t2))
 
     process_using_shared()
     m = Manager()
@@ -74,11 +75,11 @@ if __name__ == '__main__':
 
     t1=time()
     for number, prime in zip(PRIMES,map(is_prime, PRIMES)):
-        print '%d is %s' % (number,prime)
-    print 'took {} secs'.format(time()-t1)
+        print('%d is %s' % (number,prime))
+    print('took {} secs'.format(time()-t1))
 
     t1 = time()
     with futures.ProcessPoolExecutor() as executor:
         for number, prime in zip(PRIMES, executor.map(is_prime, PRIMES)):
-            print '%d is %s' % (number,prime)
-    print 'took {} secs with concurrent.futures'.format(time()-t1)
+            print('%d is %s' % (number,prime))
+    print('took {} secs with concurrent.futures'.format(time()-t1))

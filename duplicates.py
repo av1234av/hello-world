@@ -12,6 +12,9 @@ def remove_dupes(ll):
     return ll
 
 def remove_dupes1(ll):
+    """
+    Find the current element in remianing of the list. If found then skip else append
+    """
     new_ll=[]
     for i in range(len(ll)):
         if ll[i] in ll[i+1:]:
@@ -20,6 +23,11 @@ def remove_dupes1(ll):
     return new_ll
 
 def remove_duplicates(ll):
+    """
+    1. Sort the list 
+    2. Compare the current element with previous one. If matches then previous = curr else result[curr_element index] = curr_element
+    Note: Results will not be in the same order as original list.
+    """
     result=[0]*len(ll)
     _ll=sorted(ll)
     previous=_ll[0]

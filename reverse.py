@@ -37,5 +37,7 @@ if __name__ == '__main__':
     # print reverse_number(1234567)
     # print reverse_string("Hello World")
     # print reverse_words("  the    sky is    blue  ")
-    # print palindrome('Campus motto:Bottoms up Mac')
+
+    print(palindrome('Campus mottob:Bottoms up Mac'))
+
     print(reverse_recursive("Hello World"))

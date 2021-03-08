@@ -24,6 +24,6 @@ def matches(open, close):
 
 if __name__ == '__main__':
     if balanced_brackets('({[[()]]})'):
-        print 'Brackets are balanced'
+        print('Brackets are balanced')
     else:
-        print 'Unbalanced bracktes'
+        print('Unbalanced bracktes')

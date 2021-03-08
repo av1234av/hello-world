@@ -1,3 +1,5 @@
+""" Implement Queue using stacks. """
+
 import sys
 class Queue(object):
     def __init__(self):
@@ -17,7 +19,7 @@ class Queue(object):
             if self.stack2:
                 value=self.stack2.pop()
             else:
-                value = -1*sys.maxint
+                value = -1*float('inf')
 
             for _ in range(0, len(self.stack2)):
                 self.stack1.append(self.stack2.pop())

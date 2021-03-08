@@ -9,6 +9,6 @@ def max_subarray(a):
 
 if __name__ == '__main__':
     a=[1,4,-5,7,-3,24]
-    a=[-2,-3,4,-1,-2,1,5,-3]
+#    a=[-2,-3,4,-1,-2,1,5,-3]
     print(a)
     print(max_subarray(a))

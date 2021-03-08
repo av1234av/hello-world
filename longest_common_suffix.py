@@ -15,7 +15,7 @@ def lcsuffix(str1, str2):
         else:
             break
 
-    print ''.join(reversed(out))
+    print(''.join(reversed(out)))
 
 def longest_common_suffix(str1, str2):
     lst=zip(str1[::-1],str2[::-1])
@@ -25,7 +25,7 @@ def longest_common_suffix(str1, str2):
             out.append(x[0])
         else:
             break
-    print ''.join(out[::-1])
+    print(''.join(out[::-1]))
 
     # out=[x[0] for x in lst if x==(x[0],)*len(x)][::-1]
     # print ''.join(out)

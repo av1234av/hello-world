@@ -11,4 +11,4 @@ def lcm(a, b):
 if __name__ == '__main__':
     # fire.Fire(gcd)
     # fire.Fire(lcm)
-    print(gcd(300,1200))
+    print(gcd(240,740))
